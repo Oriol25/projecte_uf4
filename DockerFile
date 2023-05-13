@@ -2,9 +2,7 @@ FROM node:16.19.1-alpine3.17 AS build
 
 WORKDIR /app
 
-COPY package*.json ./
-
-RUN ls
+COPY package*.json /app
 
 RUN npm install
 
