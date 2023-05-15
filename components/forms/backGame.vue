@@ -32,7 +32,7 @@ export default {
                 if (data.status === 'OK' && data.response === "Enjoy the game.") {
                     this.$store.commit('vars/SET_GAMENAME', this.backGame.gameName)
                     this.$store.commit('vars/SET_PLAYER', "P2")
-                    this.$router.push("/spenjat")
+                    this.$router.push("/penjat")
                 } else {
                     Swal.fire(
                         'Error!',
