@@ -24,7 +24,7 @@ export default {
     },
     mounted() {
         if (this.gameName || this.player) {
-            this.$router.push("penjat");
+            this.$router.push("/penjat");
         }
     },
     computed: {

@@ -131,7 +131,7 @@ export default {
     async created() {
 
         if (!this.gamename || !this.player) {
-            this.$router.push("games")
+            this.$router.push("/games")
         }
 
         this.jugar.gameName = this.gamename
@@ -200,7 +200,7 @@ export default {
         closeGame() {
             this.$store.commit('vars/SET_GAMENAME', null)
             this.$store.commit('vars/SET_PLAYER', null)
-            this.$router.push("games")
+            this.$router.push("/games")
         }
     }
 }

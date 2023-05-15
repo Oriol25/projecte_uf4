@@ -37,7 +37,7 @@ export default {
                 if (data.status === 'OK' && (data.response === "The game has been created." || data.response === "The game has been restored.")) {
                     this.$store.commit('vars/SET_GAMENAME', this.newgame.gameName)
                     this.$store.commit('vars/SET_PLAYER', "P1")
-                    this.$router.push("penjat")
+                    this.$router.push("/penjat")
                 } else {
                     Swal.fire(
                         'Error!',
