@@ -58,7 +58,7 @@ export default {
         return {
             info: this.$vform({
                 action: "infoGame",
-                gameName: "Oriol"
+                gameName: ""
             }),
             jugar: this.$vform({
                 action: "playGame",
@@ -136,6 +136,7 @@ export default {
 
         this.jugar.gameName = this.gamename
         this.jugar.player = this.player
+this.info.gameName = this.gamename
         
         await this.getInfo()
 
