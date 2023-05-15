@@ -12,6 +12,9 @@
 </template>
 
 <script>
+
+import Swal from 'sweetalert2'
+
 export default {
     data() {
         return {
@@ -31,6 +34,11 @@ export default {
                     this.$store.commit('vars/SET_PLAYER', "P2")
                     this.$router.push("penjat")
                 } else {
+                    Swal.fire(
+                        'Error!',
+                        data.response,
+                        'error'
+                    )
                     console.error(data.status, data.response)
                 }
             } catch (e) {

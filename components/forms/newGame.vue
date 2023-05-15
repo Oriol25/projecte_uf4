@@ -17,6 +17,8 @@
 
 <script>
 
+import Swal from 'sweetalert2'
+
 export default {
     data() {
         return {
@@ -31,16 +33,17 @@ export default {
         async sendForm() {
             try {
                 const { data } = await this.newgame.post()
-
-                if (data.status === 'OK' || data.response === "The game has been restored.") {
-                    // EL JOC S'HA REINICIAT
-                }
                 
                 if (data.status === 'OK' && (data.response === "The game has been created." || data.response === "The game has been restored.")) {
                     this.$store.commit('vars/SET_GAMENAME', this.newgame.gameName)
                     this.$store.commit('vars/SET_PLAYER', "P1")
                     this.$router.push("penjat")
                 } else {
+                    Swal.fire(
+                        'Error!',
+                        data.response,
+                        'error'
+                    )
                     console.error(data.status, data.response)
                 }
             } catch (e) {
