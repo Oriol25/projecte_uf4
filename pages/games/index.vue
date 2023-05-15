@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="text-center">
-            <button class="btn btn-primary" @click.prevent="changeForm">Crear una nova partida</button>
-            <button class="btn btn-secondary" @click.prevent="changeForm">Entrar a una partida existent</button>
+            <button class="btn btn-primary" @click.prevent="showNewGameFun">Crear una nova partida</button>
+            <button class="btn btn-secondary" @click.prevent="showBackGameFun">Entrar a una partida existent</button>
         </div>
         <div>
             <FormsNewGame v-if="showNewGame" />
@@ -34,9 +34,13 @@ export default {
         }),
     },
     methods: {
-        changeForm() {
-            this.showNewGame = !this.showNewGame
-            this.showBackGame = !this.showBackGame
+        showNewGameFun() {
+            this.showNewGame = true
+            this.showBackGame = false
+        },
+        showBackGameFun() {
+            this.showBackGame = true
+            this.showNewGame = false
         }
     }
 }
